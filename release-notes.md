@@ -1,3 +1,26 @@
+# 1.1.72-dsh021.1
+
+## 中文
+
+- 独立兼容对照分支，基于 MK6657/dsh-purge 1.1.72（`ec69166706bed95efb6c35e225b01588f3cd9b72`），目标为官方 DeepSeek Harness **0.2.1-rc.3 / Windows x64**。
+- CLI 备份改用同步原子复制，避免同步修复函数触发未处理的 Promise 拒绝。
+- Windows CLI 原子替换遇到 `EPERM` / `EBUSY` / `EACCES` 时，已有原始备份才允许原位写入，并校验写后内容。
+- 补丁 #40 适配新版 `requiredContexts` 组装结构，保留必需上下文、组装后的 persona、工具表和此 fork 的注入排序。
+- 宿主校验识别 `fold-complete inject first` 标记，并识别仍丢弃组装结果的旧结构。
+- 新增 `npm test`，测试只操作临时目录及最小结构样本。
+- 本机已验证：66 项应用、0 项待处理、6 项跳过；桌面启动和 CLI 版本命令正常。模型回复效果未实测。
+- **已知限制：**旧自动重启 helper 在本机没有完成 ASAR 切换，本次由正常退出后手动切换验证成功。本版没有宣称修复该 helper。安装、回退和适配范围见 [详细说明](docs/compat-dsh-0.2.1-windows.md)。
+
+## English
+
+- Separate comparison branch based on MK6657/dsh-purge 1.1.72; verified target: official DeepSeek Harness **0.2.1-rc.3 / Windows x64**.
+- Synchronous atomic CLI backup prevents unhandled Promise rejections from the synchronous repair path.
+- On Windows, selected launcher rename errors allow an in-place write only when an original backup exists, followed by exact readback verification.
+- Patch #40 supports the `requiredContexts` assembly layout while retaining required contexts, the transformed persona, tools, and this fork's injection ordering. Host validation recognizes the folded marker and unfinished layouts.
+- Adds isolated regression tests via `npm test`.
+- Live verification: 66 applied, 0 pending, 6 skipped; desktop startup and CLI version command succeeded. Model responses were not tested.
+- **Known limitation:** the legacy restart helper did not complete the ASAR switch on the test machine. A controlled manual switch after a clean exit succeeded; this branch does not claim to fix that helper. See the [compatibility notes](docs/compat-dsh-0.2.1-windows.md).
+
 # 1.1.71
 
 ## 中文

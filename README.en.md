@@ -4,7 +4,11 @@
 
 <h1 align="center">⚔️ DeepSeek Harness cybersecurity red-team tool (dsh-purge)</h1>
 
-<p align="center"><strong>Version 1.1.71</strong></p>
+<p align="center"><strong>Version 1.1.72-dsh021.1</strong></p>
+
+> **Windows desktop compatibility branch: `compat/dsh-0.2.1-rc.3-windows`.**
+> Based on MK6657/dsh-purge 1.1.72. Host patch loading and the CLI were verified with official DeepSeek Harness **0.2.1-rc.3 / Windows x64**. Fixes cover synchronous backup failures, locked Windows launcher replacement, and the new `requiredContexts` assembly layout.
+> See the [branch compatibility notes](docs/compat-dsh-0.2.1-windows.md) for installation, before/after details, tests, and the remaining automatic ASAR-switch limitation. This branch has not been merged into `master`; the original project documentation follows.
 
 <p align="center">
   <em>DeepSeek Harness jailbreak: every model, swap prompts per model. Default prompt for 小码酱. Please star ⭐ If you build on this, see Attribution required.</em>

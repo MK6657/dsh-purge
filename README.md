@@ -4,7 +4,11 @@
 
 <h1 align="center">⚔️ DeepSeek Harness 网络安全红队工具（dsh-purge）</h1>
 
-<p align="center"><strong>Version 1.1.71</strong></p>
+<p align="center"><strong>Version 1.1.72-dsh021.1</strong></p>
+
+> **Windows 桌面兼容对照分支：`compat/dsh-0.2.1-rc.3-windows`。**
+> 基于 MK6657/dsh-purge 的 1.1.72，已在官方 DeepSeek Harness **0.2.1-rc.3 / Windows x64** 验证补丁加载与 CLI。修复备份异步异常、Windows 启动脚本替换失败，以及新版 `requiredContexts` 提示词组装兼容。
+> 安装地址、修复对照、测试结果和自动 ASAR 切换的已知限制见 [本分支适配说明](docs/compat-dsh-0.2.1-windows.md)。本分支没有合并到 `master`；下方保留原项目说明。
 
 <p align="center">
   <em>DeepSeek Harness 破甲：让所有模型都能破甲，不同模型可换不同提示词；默认提示词面向国模「小码酱」。Jailbreak for every model — swap prompts per model. 求 Star 收藏 ⭐ 如要二开，请查看署名要求部分</em>
