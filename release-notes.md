@@ -1,3 +1,23 @@
+# 1.1.72-dsh021.2
+
+## 中文
+
+- 补修上一版漏检的红队预设加载问题：DSH 0.2.1 拒绝 subagent 配置中的 `toolFilter`。
+- 随包模板移除废弃字段，已有 `$DSH_HOME/.agent-presets/redteam/agent.cordis.yml` 在启动时局部迁移，无需整份重置用户预设。
+- 迁移限定于 `@deepseek-ai/dsh-tool-subagent` 的配置；保留其他插件字段、个人正文、`maxDepth` 和自定义 `agentPreset`。支持 CRLF、空行/注释及重复执行。
+- 保留 `maxDepth: 1` 对此 spawn 工具的深度限制；旧 deny 列表没有转换成独立子级工具集。需要配置子级工具集时使用新版 `agentPreset` 机制。
+- 新增 7 项预设迁移/模板测试，连同原有测试共 **24 项全部通过**。
+- 本机重启后确认 `redteam`：`ok: true`、`phase: registered`、`broken: null`；设置页“加载失败”标记消失。插件版本为 **1.1.72-dsh021.2**，66 项应用、0 项待处理、6 项跳过。
+- 实测范围为预设加载和程序启动；没有运行模型对话或任何红队任务。自动 ASAR 切换的既有限制仍见 [适配说明](docs/compat-dsh-0.2.1-windows.md)。
+
+## English
+
+- Fixes the redteam preset load failure missed in dsh021.1: DSH 0.2.1 rejects subagent `toolFilter`.
+- Removes it from the template and performs a scoped migration of existing user presets on startup, preserving other plugins, user text, depth settings, and custom `agentPreset` choices.
+- Retains the spawn tool's depth limit; custom deny lists are not translated into independent child compositions. Use the supported `agentPreset` mechanism for child tool selection.
+- Seven new regression cases; **24 tests pass** in total.
+- Live restart confirms redteam registration with no broken diagnostic, and the settings card no longer shows a loading error. No model requests or redteam tasks were executed.
+
 # 1.1.72-dsh021.1
 
 ## 中文

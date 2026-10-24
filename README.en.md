@@ -4,10 +4,11 @@
 
 <h1 align="center">⚔️ DeepSeek Harness cybersecurity red-team tool (dsh-purge)</h1>
 
-<p align="center"><strong>Version 1.1.72-dsh021.1</strong></p>
+<p align="center"><strong>Version 1.1.72-dsh021.2</strong></p>
 
 > **Windows desktop compatibility branch: `compat/dsh-0.2.1-rc.3-windows`.**
 > Based on MK6657/dsh-purge 1.1.72. Host patch loading and the CLI were verified with official DeepSeek Harness **0.2.1-rc.3 / Windows x64**. Fixes cover synchronous backup failures, locked Windows launcher replacement, and the new `requiredContexts` assembly layout.
+> **dsh021.2:** removes the rejected subagent `toolFilter` from the bundled redteam preset and migrates existing user presets on startup. Live registration and the settings card now load without an error; all 24 regression tests pass.
 > See the [branch compatibility notes](docs/compat-dsh-0.2.1-windows.md) for installation, before/after details, tests, and the remaining automatic ASAR-switch limitation. This branch has not been merged into `master`; the original project documentation follows.
 
 <p align="center">
